@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getTree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTreeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="publicGetTree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="porj_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plan_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="publicGetTreeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getplan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getplanResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getProgress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProgressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveGuidAndProgress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveGuidAndProgressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getPlanInfoByTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="projID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPlanInfoByTimeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveProgress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="progress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveProgressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="savePlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePlanResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="homePageProgress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="homePageProgressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getprogress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proj" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="starttime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endtime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getprogressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveprogress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proj" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveprogressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="insertprogress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertprogressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteprogress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteprogressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveContentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveNewPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveNewPlanResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveCostList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveCostListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteCostList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteCostListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCostResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTableResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCostList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCostListResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getTreeSoapIn">
+    <wsdl:part name="parameters" element="tns:getTree" />
+  </wsdl:message>
+  <wsdl:message name="getTreeSoapOut">
+    <wsdl:part name="parameters" element="tns:getTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="publicGetTreeSoapIn">
+    <wsdl:part name="parameters" element="tns:publicGetTree" />
+  </wsdl:message>
+  <wsdl:message name="publicGetTreeSoapOut">
+    <wsdl:part name="parameters" element="tns:publicGetTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getplanSoapIn">
+    <wsdl:part name="parameters" element="tns:getplan" />
+  </wsdl:message>
+  <wsdl:message name="getplanSoapOut">
+    <wsdl:part name="parameters" element="tns:getplanResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProgressSoapIn">
+    <wsdl:part name="parameters" element="tns:getProgress" />
+  </wsdl:message>
+  <wsdl:message name="getProgressSoapOut">
+    <wsdl:part name="parameters" element="tns:getProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveGuidAndProgressSoapIn">
+    <wsdl:part name="parameters" element="tns:saveGuidAndProgress" />
+  </wsdl:message>
+  <wsdl:message name="saveGuidAndProgressSoapOut">
+    <wsdl:part name="parameters" element="tns:saveGuidAndProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlanInfoByTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getPlanInfoByTime" />
+  </wsdl:message>
+  <wsdl:message name="getPlanInfoByTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getPlanInfoByTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveProgressSoapIn">
+    <wsdl:part name="parameters" element="tns:saveProgress" />
+  </wsdl:message>
+  <wsdl:message name="saveProgressSoapOut">
+    <wsdl:part name="parameters" element="tns:saveProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="savePlanSoapIn">
+    <wsdl:part name="parameters" element="tns:savePlan" />
+  </wsdl:message>
+  <wsdl:message name="savePlanSoapOut">
+    <wsdl:part name="parameters" element="tns:savePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="homePageProgressSoapIn">
+    <wsdl:part name="parameters" element="tns:homePageProgress" />
+  </wsdl:message>
+  <wsdl:message name="homePageProgressSoapOut">
+    <wsdl:part name="parameters" element="tns:homePageProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="getprogressSoapIn">
+    <wsdl:part name="parameters" element="tns:getprogress" />
+  </wsdl:message>
+  <wsdl:message name="getprogressSoapOut">
+    <wsdl:part name="parameters" element="tns:getprogressResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveprogressSoapIn">
+    <wsdl:part name="parameters" element="tns:saveprogress" />
+  </wsdl:message>
+  <wsdl:message name="saveprogressSoapOut">
+    <wsdl:part name="parameters" element="tns:saveprogressResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertprogressSoapIn">
+    <wsdl:part name="parameters" element="tns:insertprogress" />
+  </wsdl:message>
+  <wsdl:message name="insertprogressSoapOut">
+    <wsdl:part name="parameters" element="tns:insertprogressResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteprogressSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteprogress" />
+  </wsdl:message>
+  <wsdl:message name="deleteprogressSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteprogressResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveContentSoapIn">
+    <wsdl:part name="parameters" element="tns:saveContent" />
+  </wsdl:message>
+  <wsdl:message name="saveContentSoapOut">
+    <wsdl:part name="parameters" element="tns:saveContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveNewPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:saveNewPlan" />
+  </wsdl:message>
+  <wsdl:message name="saveNewPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:saveNewPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveCostListSoapIn">
+    <wsdl:part name="parameters" element="tns:saveCostList" />
+  </wsdl:message>
+  <wsdl:message name="saveCostListSoapOut">
+    <wsdl:part name="parameters" element="tns:saveCostListResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteCostListSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteCostList" />
+  </wsdl:message>
+  <wsdl:message name="deleteCostListSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteCostListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCostSoapIn">
+    <wsdl:part name="parameters" element="tns:getCost" />
+  </wsdl:message>
+  <wsdl:message name="getCostSoapOut">
+    <wsdl:part name="parameters" element="tns:getCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTable" />
+  </wsdl:message>
+  <wsdl:message name="updateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCostListSoapIn">
+    <wsdl:part name="parameters" element="tns:getCostList" />
+  </wsdl:message>
+  <wsdl:message name="getCostListSoapOut">
+    <wsdl:part name="parameters" element="tns:getCostListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTreeHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getTreeHttpGetOut" />
+  <wsdl:message name="publicGetTreeHttpGetIn">
+    <wsdl:part name="porj_id" type="s:string" />
+    <wsdl:part name="plan_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="publicGetTreeHttpGetOut" />
+  <wsdl:message name="getplanHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getplanHttpGetOut" />
+  <wsdl:message name="getProgressHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProgressHttpGetOut" />
+  <wsdl:message name="saveGuidAndProgressHttpGetIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveGuidAndProgressHttpGetOut" />
+  <wsdl:message name="getPlanInfoByTimeHttpGetIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="projID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPlanInfoByTimeHttpGetOut" />
+  <wsdl:message name="saveProgressHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="progress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveProgressHttpGetOut" />
+  <wsdl:message name="savePlanHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePlanHttpGetOut" />
+  <wsdl:message name="homePageProgressHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="homePageProgressHttpGetOut" />
+  <wsdl:message name="getprogressHttpGetIn">
+    <wsdl:part name="proj" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getprogressHttpGetOut" />
+  <wsdl:message name="saveprogressHttpGetIn">
+    <wsdl:part name="proj" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveprogressHttpGetOut" />
+  <wsdl:message name="insertprogressHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertprogressHttpGetOut" />
+  <wsdl:message name="deleteprogressHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteprogressHttpGetOut" />
+  <wsdl:message name="saveContentHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="content" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveContentHttpGetOut" />
+  <wsdl:message name="saveNewPlanHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveNewPlanHttpGetOut" />
+  <wsdl:message name="saveCostListHttpGetIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveCostListHttpGetOut" />
+  <wsdl:message name="deleteCostListHttpGetIn">
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="projId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteCostListHttpGetOut" />
+  <wsdl:message name="getCostHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCostHttpGetOut" />
+  <wsdl:message name="updateTableHttpGetIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateTableHttpGetOut" />
+  <wsdl:message name="getCostListHttpGetIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCostListHttpGetOut" />
+  <wsdl:message name="getTreeHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getTreeHttpPostOut" />
+  <wsdl:message name="publicGetTreeHttpPostIn">
+    <wsdl:part name="porj_id" type="s:string" />
+    <wsdl:part name="plan_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="publicGetTreeHttpPostOut" />
+  <wsdl:message name="getplanHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getplanHttpPostOut" />
+  <wsdl:message name="getProgressHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProgressHttpPostOut" />
+  <wsdl:message name="saveGuidAndProgressHttpPostIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveGuidAndProgressHttpPostOut" />
+  <wsdl:message name="getPlanInfoByTimeHttpPostIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="projID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPlanInfoByTimeHttpPostOut" />
+  <wsdl:message name="saveProgressHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="progress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveProgressHttpPostOut" />
+  <wsdl:message name="savePlanHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePlanHttpPostOut" />
+  <wsdl:message name="homePageProgressHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="homePageProgressHttpPostOut" />
+  <wsdl:message name="getprogressHttpPostIn">
+    <wsdl:part name="proj" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getprogressHttpPostOut" />
+  <wsdl:message name="saveprogressHttpPostIn">
+    <wsdl:part name="proj" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveprogressHttpPostOut" />
+  <wsdl:message name="insertprogressHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="insertprogressHttpPostOut" />
+  <wsdl:message name="deleteprogressHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteprogressHttpPostOut" />
+  <wsdl:message name="saveContentHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="content" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveContentHttpPostOut" />
+  <wsdl:message name="saveNewPlanHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveNewPlanHttpPostOut" />
+  <wsdl:message name="saveCostListHttpPostIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="saveCostListHttpPostOut" />
+  <wsdl:message name="deleteCostListHttpPostIn">
+    <wsdl:part name="pid" type="s:string" />
+    <wsdl:part name="projId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteCostListHttpPostOut" />
+  <wsdl:message name="getCostHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="projid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCostHttpPostOut" />
+  <wsdl:message name="updateTableHttpPostIn">
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateTableHttpPostOut" />
+  <wsdl:message name="getCostListHttpPostIn">
+    <wsdl:part name="projid" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCostListHttpPostOut" />
+  <wsdl:portType name="TPCServiceSoap">
+    <wsdl:operation name="getTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;treeToDict:树字典的F_id，type：类型id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getTreeSoapIn" />
+      <wsdl:output message="tns:getTreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: publicGetTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID,计划id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:publicGetTreeSoapIn" />
+      <wsdl:output message="tns:publicGetTreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getplan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getplanSoapIn" />
+      <wsdl:output message="tns:getplanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getProgressSoapIn" />
+      <wsdl:output message="tns:getProgressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveGuidAndProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间保存进度和模型guid&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json数组&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'保存成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'保存失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveGuidAndProgressSoapIn" />
+      <wsdl:output message="tns:saveGuidAndProgressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getPlanInfoByTime&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间间隔查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;startTime:开始时间;endTime:结束时间;projID:项目id&lt;/strong&gt;}&lt;/p&gt;   
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getPlanInfoByTimeSoapIn" />
+      <wsdl:output message="tns:getPlanInfoByTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id:计划id，progress:最新进度&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveProgressSoapIn" />
+      <wsdl:output message="tns:saveProgressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: savePlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:计划id，json:更新json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:savePlanSoapIn" />
+      <wsdl:output message="tns:savePlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: homePageProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id(项目ID)&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:homePageProgressSoapIn" />
+      <wsdl:output message="tns:homePageProgressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:项目id，starttime:开始时间，endtime:结束时间&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getprogressSoapIn" />
+      <wsdl:output message="tns:getprogressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string proj:项目ID,string guid:guid,string status:状态&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveprogressSoapIn" />
+      <wsdl:output message="tns:saveprogressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: insertprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid：项目id, string json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'插入成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'插入失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:insertprogressSoapIn" />
+      <wsdl:output message="tns:insertprogressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid:项目id, string guid&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteprogressSoapIn" />
+      <wsdl:output message="tns:deleteprogressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveContent&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt; 更改content&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string id：进度id, string content：内容&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';result:'更新成功'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveContentSoapIn" />
+      <wsdl:output message="tns:saveContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveNewPlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;分布id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveNewPlanSoapIn" />
+      <wsdl:output message="tns:saveNewPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json:造价清单json，projId项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveCostListSoapIn" />
+      <wsdl:output message="tns:saveCostListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;删除造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;pid:节点id，projId:项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';'删除完成'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;无&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteCostListSoapIn" />
+      <wsdl:output message="tns:deleteCostListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCost&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取单价&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id：节点编号；projid：项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostSoapIn" />
+      <wsdl:output message="tns:getCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: updateTable&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新单价表&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json：单价json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:updateTableSoapIn" />
+      <wsdl:output message="tns:updateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projId:项目编号;id节点编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostListSoapIn" />
+      <wsdl:output message="tns:getCostListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TPCServiceHttpGet">
+    <wsdl:operation name="getTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;treeToDict:树字典的F_id，type：类型id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getTreeHttpGetIn" />
+      <wsdl:output message="tns:getTreeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: publicGetTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID,计划id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:publicGetTreeHttpGetIn" />
+      <wsdl:output message="tns:publicGetTreeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getplan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getplanHttpGetIn" />
+      <wsdl:output message="tns:getplanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getProgressHttpGetIn" />
+      <wsdl:output message="tns:getProgressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveGuidAndProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间保存进度和模型guid&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json数组&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'保存成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'保存失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveGuidAndProgressHttpGetIn" />
+      <wsdl:output message="tns:saveGuidAndProgressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getPlanInfoByTime&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间间隔查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;startTime:开始时间;endTime:结束时间;projID:项目id&lt;/strong&gt;}&lt;/p&gt;   
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getPlanInfoByTimeHttpGetIn" />
+      <wsdl:output message="tns:getPlanInfoByTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id:计划id，progress:最新进度&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveProgressHttpGetIn" />
+      <wsdl:output message="tns:saveProgressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: savePlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:计划id，json:更新json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:savePlanHttpGetIn" />
+      <wsdl:output message="tns:savePlanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: homePageProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id(项目ID)&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:homePageProgressHttpGetIn" />
+      <wsdl:output message="tns:homePageProgressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:项目id，starttime:开始时间，endtime:结束时间&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getprogressHttpGetIn" />
+      <wsdl:output message="tns:getprogressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string proj:项目ID,string guid:guid,string status:状态&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveprogressHttpGetIn" />
+      <wsdl:output message="tns:saveprogressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: insertprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid：项目id, string json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'插入成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'插入失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:insertprogressHttpGetIn" />
+      <wsdl:output message="tns:insertprogressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid:项目id, string guid&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteprogressHttpGetIn" />
+      <wsdl:output message="tns:deleteprogressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveContent&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt; 更改content&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string id：进度id, string content：内容&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';result:'更新成功'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveContentHttpGetIn" />
+      <wsdl:output message="tns:saveContentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveNewPlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;分布id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveNewPlanHttpGetIn" />
+      <wsdl:output message="tns:saveNewPlanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json:造价清单json，projId项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveCostListHttpGetIn" />
+      <wsdl:output message="tns:saveCostListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;删除造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;pid:节点id，projId:项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';'删除完成'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;无&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteCostListHttpGetIn" />
+      <wsdl:output message="tns:deleteCostListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCost&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取单价&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id：节点编号；projid：项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostHttpGetIn" />
+      <wsdl:output message="tns:getCostHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: updateTable&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新单价表&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json：单价json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:updateTableHttpGetIn" />
+      <wsdl:output message="tns:updateTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projId:项目编号;id节点编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostListHttpGetIn" />
+      <wsdl:output message="tns:getCostListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TPCServiceHttpPost">
+    <wsdl:operation name="getTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;treeToDict:树字典的F_id，type：类型id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getTreeHttpPostIn" />
+      <wsdl:output message="tns:getTreeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: publicGetTree&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取树&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID,计划id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:publicGetTreeHttpPostIn" />
+      <wsdl:output message="tns:publicGetTreeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getplan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getplanHttpPostIn" />
+      <wsdl:output message="tns:getplanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getProgressHttpPostIn" />
+      <wsdl:output message="tns:getProgressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveGuidAndProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间保存进度和模型guid&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json数组&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'保存成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'保存失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveGuidAndProgressHttpPostIn" />
+      <wsdl:output message="tns:saveGuidAndProgressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getPlanInfoByTime&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;根据时间间隔查询计划&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;startTime:开始时间;endTime:结束时间;projID:项目id&lt;/strong&gt;}&lt;/p&gt;   
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getPlanInfoByTimeHttpPostIn" />
+      <wsdl:output message="tns:getPlanInfoByTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id:计划id，progress:最新进度&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveProgressHttpPostIn" />
+      <wsdl:output message="tns:saveProgressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: savePlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:计划id，json:更新json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:savePlanHttpPostIn" />
+      <wsdl:output message="tns:savePlanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: homePageProgress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取首页进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id(项目ID)&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:homePageProgressHttpPostIn" />
+      <wsdl:output message="tns:homePageProgressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projid:项目id，starttime:开始时间，endtime:结束时间&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getprogressHttpPostIn" />
+      <wsdl:output message="tns:getprogressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string proj:项目ID,string guid:guid,string status:状态&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveprogressHttpPostIn" />
+      <wsdl:output message="tns:saveprogressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: insertprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid：项目id, string json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'插入成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'插入失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:insertprogressHttpPostIn" />
+      <wsdl:output message="tns:insertprogressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteprogress&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;查询进度&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string projid:项目id, string guid&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteprogressHttpPostIn" />
+      <wsdl:output message="tns:deleteprogressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveContent&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt; 更改content&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;string id：进度id, string content：内容&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';result:'更新成功'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveContentHttpPostIn" />
+      <wsdl:output message="tns:saveContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveNewPlan&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存甘特&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;分布id&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'更新成功';成功信息}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'更新失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveNewPlanHttpPostIn" />
+      <wsdl:output message="tns:saveNewPlanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: saveCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;保存造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json:造价清单json，projId项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:saveCostListHttpPostIn" />
+      <wsdl:output message="tns:saveCostListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: deleteCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;删除造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;pid:节点id，projId:项目ID&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'删除成功';'删除完成'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'删除失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;无&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:deleteCostListHttpPostIn" />
+      <wsdl:output message="tns:deleteCostListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCost&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取单价&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;id：节点编号；projid：项目编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostHttpPostIn" />
+      <wsdl:output message="tns:getCostHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: updateTable&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;更新单价表&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;json：单价json&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:updateTableHttpPostIn" />
+      <wsdl:output message="tns:updateTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;method: getCostList&lt;/h3&gt;
+        &lt;p&gt;方法描述：&lt;strong&gt;获取造价清单&lt;/strong&gt;&lt;/p&gt; 
+        &lt;p&gt;参数：{&lt;strong&gt;projId:项目编号;id节点编号&lt;/strong&gt;}&lt;/p&gt;
+        &lt;p style='color:green'&gt;成功结果：&lt;strong&gt;{status:200;message:'查询成功';result:{}}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p style='color:red'&gt;失败结果：&lt;strong&gt;{status:0;message:'查询失败';result:'异常信息'}&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;输出格式：&lt;strong&gt;json&lt;/strong&gt;&lt;/p&gt;&lt;/br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:getCostListHttpPostIn" />
+      <wsdl:output message="tns:getCostListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TPCServiceSoap" type="tns:TPCServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTree">
+      <soap:operation soapAction="http://tempuri.org/getTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <soap:operation soapAction="http://tempuri.org/publicGetTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <soap:operation soapAction="http://tempuri.org/getplan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <soap:operation soapAction="http://tempuri.org/getProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <soap:operation soapAction="http://tempuri.org/saveGuidAndProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <soap:operation soapAction="http://tempuri.org/getPlanInfoByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <soap:operation soapAction="http://tempuri.org/saveProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <soap:operation soapAction="http://tempuri.org/savePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <soap:operation soapAction="http://tempuri.org/homePageProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <soap:operation soapAction="http://tempuri.org/getprogress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <soap:operation soapAction="http://tempuri.org/saveprogress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <soap:operation soapAction="http://tempuri.org/insertprogress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <soap:operation soapAction="http://tempuri.org/deleteprogress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <soap:operation soapAction="http://tempuri.org/saveContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <soap:operation soapAction="http://tempuri.org/saveNewPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <soap:operation soapAction="http://tempuri.org/saveCostList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <soap:operation soapAction="http://tempuri.org/deleteCostList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <soap:operation soapAction="http://tempuri.org/getCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <soap:operation soapAction="http://tempuri.org/updateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <soap:operation soapAction="http://tempuri.org/getCostList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TPCServiceSoap12" type="tns:TPCServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTree">
+      <soap12:operation soapAction="http://tempuri.org/getTree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <soap12:operation soapAction="http://tempuri.org/publicGetTree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <soap12:operation soapAction="http://tempuri.org/getplan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <soap12:operation soapAction="http://tempuri.org/getProgress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <soap12:operation soapAction="http://tempuri.org/saveGuidAndProgress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <soap12:operation soapAction="http://tempuri.org/getPlanInfoByTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <soap12:operation soapAction="http://tempuri.org/saveProgress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <soap12:operation soapAction="http://tempuri.org/savePlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <soap12:operation soapAction="http://tempuri.org/homePageProgress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <soap12:operation soapAction="http://tempuri.org/getprogress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <soap12:operation soapAction="http://tempuri.org/saveprogress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <soap12:operation soapAction="http://tempuri.org/insertprogress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <soap12:operation soapAction="http://tempuri.org/deleteprogress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <soap12:operation soapAction="http://tempuri.org/saveContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <soap12:operation soapAction="http://tempuri.org/saveNewPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <soap12:operation soapAction="http://tempuri.org/saveCostList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <soap12:operation soapAction="http://tempuri.org/deleteCostList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <soap12:operation soapAction="http://tempuri.org/getCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <soap12:operation soapAction="http://tempuri.org/updateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <soap12:operation soapAction="http://tempuri.org/getCostList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TPCServiceHttpGet" type="tns:TPCServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getTree">
+      <http:operation location="/getTree" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <http:operation location="/publicGetTree" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <http:operation location="/getplan" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <http:operation location="/getProgress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <http:operation location="/saveGuidAndProgress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <http:operation location="/getPlanInfoByTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <http:operation location="/saveProgress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <http:operation location="/savePlan" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <http:operation location="/homePageProgress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <http:operation location="/getprogress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <http:operation location="/saveprogress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <http:operation location="/insertprogress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <http:operation location="/deleteprogress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <http:operation location="/saveContent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <http:operation location="/saveNewPlan" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <http:operation location="/saveCostList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <http:operation location="/deleteCostList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <http:operation location="/getCost" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <http:operation location="/updateTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <http:operation location="/getCostList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TPCServiceHttpPost" type="tns:TPCServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getTree">
+      <http:operation location="/getTree" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="publicGetTree">
+      <http:operation location="/publicGetTree" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getplan">
+      <http:operation location="/getplan" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProgress">
+      <http:operation location="/getProgress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveGuidAndProgress">
+      <http:operation location="/saveGuidAndProgress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getPlanInfoByTime">
+      <http:operation location="/getPlanInfoByTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveProgress">
+      <http:operation location="/saveProgress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="savePlan">
+      <http:operation location="/savePlan" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="homePageProgress">
+      <http:operation location="/homePageProgress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getprogress">
+      <http:operation location="/getprogress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveprogress">
+      <http:operation location="/saveprogress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="insertprogress">
+      <http:operation location="/insertprogress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteprogress">
+      <http:operation location="/deleteprogress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveContent">
+      <http:operation location="/saveContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveNewPlan">
+      <http:operation location="/saveNewPlan" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="saveCostList">
+      <http:operation location="/saveCostList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCostList">
+      <http:operation location="/deleteCostList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCost">
+      <http:operation location="/getCost" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateTable">
+      <http:operation location="/updateTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCostList">
+      <http:operation location="/getCostList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TPCService">
+    <wsdl:port name="TPCServiceSoap" binding="tns:TPCServiceSoap">
+      <soap:address location="http://192.168.1.147/nservice/TPCService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TPCServiceSoap12" binding="tns:TPCServiceSoap12">
+      <soap12:address location="http://192.168.1.147/nservice/TPCService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TPCServiceHttpGet" binding="tns:TPCServiceHttpGet">
+      <http:address location="http://192.168.1.147/nservice/TPCService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TPCServiceHttpPost" binding="tns:TPCServiceHttpPost">
+      <http:address location="http://192.168.1.147/nservice/TPCService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
